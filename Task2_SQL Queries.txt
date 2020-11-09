@@ -1,0 +1,39 @@
+1. Return Employee record with highest salary
+
+    SELECT * from Employee WHERE salary IN(select MAX(salary) FROM Employee);
+
+2. Return the highest salary in employee table
+
+
+   SELECT MAX(salary) AS Highest_Salary FROM Employee;
+
+
+3. Return 2nd highest salary from employee table
+
+   
+   SELECT MAX(salary) AS SecondHighest_Salary FROM Employee WHERE salary < ( SELECT Max(salary) FROM Employee);
+
+
+4. Select range of employees based on id
+
+    SELECT * FROM Employee WHERE emp_id BETWEEN 10001 AND 10005;
+
+
+5. Return an employee with highest salary and the employees department name
+
+
+    SELECT first_name,last_name,salary,department_name FROM Employee e
+    INNER JOIN Department d ON e.department_id=d.department_id
+    WHERE salary in (SELECT MAX(salary) FROM Employee);
+
+
+6. Return highest salary, employee_name, department_name for EACH department
+
+    Select first_name,last_name,salary,department_name from Employee e 
+
+    INNER JOIN Department d ON(e.department_id=d.department_id)
+WHERE 
+    salary in (Select Max(salary) FROM Employee GROUP BY department_id);
+
+    
+   

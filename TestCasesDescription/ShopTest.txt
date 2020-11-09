@@ -1,0 +1,21 @@
+Objective- ShopTest is a test case which will click on Shop button, Navigate to "Explore Maps" and "Komoot Premium" options on the Shop page
+
+Description-
+
+* The "ShopTest" is using the "ShopPage", "HomePage" and "LoginPage" Page classes through the Page Object Model using Page Factory
+* Objects are created for all page classes and a webdriver instance is passed through the objects
+* The Webdriver instance is received by the constructors of both the classes and Pagefactory weblements are initialized by the constructors
+* Both the Page classes have a list of weblements and methods to perform actions on those webelements for a successful test execution
+* The Page Class objects will invoke methods based on the sequence of the method call written in the "ShopTest" Test case
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Steps:
+
+1.The Browser and application is launched by @BeforeTest method "BrowserSetup()"
+2. Once the application is launched the proxy pop-up is handled by method "proxy_click()" invoked by LoginPage object "obj5" in the test case
+3. Followed by Clicking on "Shop" button performed by method "Shop_click()" invoked by HomePage object "obj_home4" in the test case
+4. Followed by Clicking on "Explore Maps" button performed by method "ExploreMaps_Click()" invoked by ShopPage object "obj_shop" in the test case
+5. Followed by Clicking on "Komoot Premium" button performed by method "KomootPremium_Click()" invoked by ShopPage object "obj_shop" in the test case
+6. A screenshot is captured for the above action.
+7. The browser is then closed using @AfterTest method "CloseBrowser()"

@@ -1,0 +1,23 @@
+Objective- HomePageTest is a test case which is testing the navigation of main application links on the homepage of the appliction
+The test case will run by clicking on 3 important weblinks on the home page of the application and capturing screenshots after every click 
+
+Description:
+
+* The "HomePageTest" is using the "HomePage" and "LoginPage" Page class through the Page Object Model using Page Factory
+* Objects are created for HomePage and LoginPage class and a webdriver instance is passed through the objects
+* The Webdriver instance is received by the constructors of both the classes and Pagefactory weblements are initialized by the constructors
+* The Page classes have a list of weblements and methods to perform actions on those webelements for a successful test execution
+* The Page classes object will invoke methods based on the sequence of the method call written in the HomePage Test case
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+Steps:
+
+1.The Browser and application is launched using @BeforeTest method "BrowserSetup()"
+2.Once the application is launched the proxy pop-up is handled by method "proxy_click()" invoked by LoginPage object "obj2" in the test case
+3.Followed by Clicking on "Discover" button performed by method "Discover_Tours()" invoked by HomePage object "obj_home" in the test case
+4.A screenshot is captured for the Discover Page
+5.Followed by Clicking on "Route Planner" button performed by method "Route_Planner()" invoked by HomePage object "obj_home" in the test case
+6.A screenshot is captured for the Route Planner Page
+7.Followed by Clicking on "Features" button performed by method "Features()" invoked by HomePage object "obj_home" in the test case
+8.A screenshot is captured for the Features Page
+9.The browser is then closed using @AfterTest method "CloseBrowser()"

@@ -1,0 +1,23 @@
+Objective- LoginPageTest is a test case which is testing the Login functionality of the Komoot Application
+The test case will run to login the user into the application and will capture a screenshot and username once the login is complete
+
+Description-
+
+* The "LoginPageTest" is using the "LoginPage" Page class through the Page Object Model using Page Factory
+* An object is created for LoginPage class and a webdriver instance is passed through the object
+* The Webdriver instance is received by the constructor of LoginPage class and Pagefactory weblements are initialized by the constructor
+* The LoginPage class has a list of weblements and methods to perform actions on those webelements for a successful login
+* The LoginPage class object will invoke methods based on the sequence of the method call written in the LoginPage Test case
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+1.The Browser and application is launched using @BeforeTest method "BrowserSetup()"
+2.Once the application is launched the proxy pop-up is handled by method "proxy_click()" invoked by LoginPage object "login_obj" in the test case
+3.Followed by Clicking on "Signup/Login button" performed by method "Login_Signup_button_click()" invoked by LoginPage object "login_obj" in the test case
+4.Followed by Entering email address using method "input_email()" invoked by LoginPage object "login_obj" in the test case
+5.Then we click on "Continue With Email" button using method "continue_with_email_click()" invoked by LoginPage object "login_obj" in the test case
+6.Followed by Entering password using method "enter_password()" invoked by LoginPage object "login_obj" in the test case
+7.The finally we click on "Login" button using method "Login_button_click()" to complete a successful login
+8.The successful login is validated by capturing a screenshot and the username information
+9.The browser is then closed using @AfterTest method "CloseBrowser()"

@@ -1,0 +1,22 @@
+Objective- DiscoveryTours_Test is a test case which will navigate and search into Hiking Tours under Discover page 
+The test case will run by clicking on hikinh tours web link and then searching the hiking tours by clicking on search button
+
+Description:
+
+* The "DiscoveryTours_Test" is using the "DiscoverPage", "HomePage and "LoginPage" Page classes through the Page Object Model using Page Factory
+* Objects are created for all page classes and a webdriver instance is passed through the objects
+* The Webdriver instance is received by the constructors of both the classes and Pagefactory weblements are initialized by the constructors
+* Both the Page classes have a list of weblements and methods to perform actions on those webelements for a successful test execution
+* The Page Class objects will invoke methods based on the sequence of the method call written in the "DiscoveryTours_Test" Test case
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Steps:
+
+1.The Browser and application is launched by @BeforeTest method "BrowserSetup()"
+2.Once the application is launched the proxy pop-up is handled by method "proxy_click()" invoked by LoginPage object "obj3" in the test case
+3.Followed by Clicking on "Discover" button performed by method "Discover_Tours()" invoked by HomePage object "obj_home2" in the test case
+4.Followed by Clicking on "Hiking trails & Routes" button performed by method "Hiking_Tours_Click()" invoked by DiscoverPage object "obj_disc" in the test case
+5.Followed by Clicking on "Search" button performed by method "SearchButton_Click()" invoked by DiscoverPage object "obj_disc" in the test case
+6.A screenshot is captured for the Searched Page
+7.The browser is then closed using @AfterTest method "CloseBrowser()"

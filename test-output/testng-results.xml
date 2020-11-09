@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="4" total="5" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="14800" started-at="2020-11-09T16:00:55Z" finished-at="2020-11-09T16:01:10Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="14800" started-at="2020-11-09T16:00:55Z" finished-at="2020-11-09T16:01:10Z">
+      <class name="com.komoot.testcases.KomootAppTestCases">
+        <test-method status="PASS" signature="Browsersetup()[pri:0, instance:com.komoot.testcases.KomootAppTestCases@5c3bd550]" name="Browsersetup" is-config="true" duration-ms="8073" started-at="2020-11-09T16:00:55Z" finished-at="2020-11-09T16:01:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Browsersetup -->
+        <test-method status="PASS" signature="DiscoveryTours_Test()[pri:3, instance:com.komoot.testcases.KomootAppTestCases@5c3bd550]" name="DiscoveryTours_Test" duration-ms="5980" started-at="2020-11-09T16:01:03Z" finished-at="2020-11-09T16:01:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DiscoveryTours_Test -->
+        <test-method status="PASS" signature="CloseBrowser()[pri:0, instance:com.komoot.testcases.KomootAppTestCases@5c3bd550]" name="CloseBrowser" is-config="true" duration-ms="711" started-at="2020-11-09T16:01:09Z" finished-at="2020-11-09T16:01:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseBrowser -->
+      </class> <!-- com.komoot.testcases.KomootAppTestCases -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

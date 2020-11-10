@@ -1,0 +1,81 @@
+Installation Steps on Local Computer:
+
+1. Navigate to website: https://www.jenkins.io/download/
+2. Download "Generic Java Package(.war)" from the website
+3. Once the war file is downloaded open Command Prompt
+4. Under CMD navigate to the loction where the .war file is downloaded
+5. On command prompt enter  : 'java -jar jenkins.war -httpPort-8080' to initiate the jenkins server on your machine 
+   (Note: We can change the port to 9090 if 8080 port is occupied)
+6. In few seconds a temporary Admin password will be generated and a message is displayed "Jenkins  is fully up and running"
+7. Open the browser and launch URL: localhost:8080
+8. A window will open requiring to enter the temporary password to unclock Jenkins
+9. Once the password is enetered a new window will open with 2 options to select from:
+   - Install suggested Plugins
+   - Select plugins to install
+10. In general it is better to select option "Select plugins to install"
+11. Select the required plugins and Jenkins will take sometime to install them
+12. Once it is complete Jenkins will ask you to setup your admin username, password
+13. Once it is all done we are good to use the Jenkins as a local host URL (localhost:8080) on our own laptop
+14. We can setup Java_Home,Maven_Home in Jenkins by navigating to Manage Jenkins--> Global Tool Configuration--> JDK Installations/Maven Installations
+15. Enter the path for JDK and Maven inside Global Tool Cinfigurations to set up Java and Maven for our Jenkins
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+How to Create/Schedule A job in Jenkins and generate periodic reports :
+
+1. On Jenkins Home Page click on "New Item"
+2. Enter the name of the job like "MavenJob" and select Free-Style Project, Click "Ok"
+3. MavenJOb configure page will be opened with multiple tabs
+4. General tab: In this tab we need to specify about our Java project location for which we need to create the automated job
+   - If the project is in GIT- We need to specify the Git repository location under Source Code Management section in General tab
+   - If the project is in our laptop we need to place the project folder inside the Jenkins home directory
+5. Considering we have the project in our local computer then we need to click on "Advanced" in General tab and select checkbox "Use custom workspace"
+6. We need to provide Directory path of the project which is placed inside the Jenkins home directory as "$(JENKINS_HOME)/"project_name"
+7. Under Build Triggers select "Build Periodically" and set "00 12 * * *" to run this job for 12 noon everyday.
+8. Under Build add Build step as "Invoke Top-level Maven Targets" 
+  - Here Maven Version will be pre-populated from the Maven version we have defined in the Global Tool Configuration.
+  - Under Goals, we have to provide the Maven command to trigger the execution. "mvn test –PRegression".
+9. Under Build Add post-build action to "Publish TestNg Results" to generated a TestNg Report after build is run everyday.
+   - Note: For Step 9 we need to have TestNg Reports plugin already installed into our Jenkins 
+10. Once all this is done save the job.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+How to Host the Jenkins on a Server:
+
+Initial Steps
+
+1. Navigate to Jenkins Web Interface > Login as Admin > Manage Jenkins > Configure System
+2. Configure the root directory for workspace and build record.
+3. Set the Jenkins Master executors to 0, setting up separate cloud instances to be the workers; Jenkins Master will only be the orchestrator.
+4. Set environment variables 
+5. Configure the installed plugins (i.e. GitHub, Sauce Labs, Slack, etc.); typically involves adding API keys or shared secrets.
+
+Configure Global Settings
+
+
+Steps
+
+1. Navigate to Jenkins Web Interface > Login as Admin > Manage Jenkins > Configure Global Security
+2. Select checkbox to enable security.
+3. Set TCP port for JNLP slave agents to 9000.
+4. Select LDAP from the Access Control (Security Realm) section and enter your LDAP server address:
+5. Select matrix-based security from the Access Control (Authorization) section
+6. Select the checkbox for Prevent Cross Site Request Forgery Exploits, and Enable Slave --> Master Access Control
+
+Add Node (Slave)
+
+1. Go to the Manage Jenkins section and scroll down to the section of Manage Nodes.
+2. Click on New Node
+3. Give a name for the node, choose the Dumb slave option and click on Ok
+4. Enter the details of the node slave machine. 
+5. We also need to add the necessary details of the slave node such as the node name and the login credentials for the node machine. 
+6. Click the Save button. 
+
+
+Check that the new Node is ONLINE.
+
+Navigate to Jenkins Web Interface > Login as Admin > Manage Jenkins > Manage Nodes
+
+Post this Jenkins will be ready to orchestrate a CI Pipeline.
+
